@@ -1,0 +1,29 @@
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.exe
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.pdb
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.xml
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\Window1.baml
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\Window1.g.vb
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\Application.g.vb
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre_MarkupCompile.cache
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.g.resources
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.Resources.resources
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.vbproj.GenerateResource.Cache
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.exe
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.xml
+C:\Documents and Settings\mora\Documenti\Visual Studio 2008\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.pdb
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.exe
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.xml
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.pdb
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.vbprojResolveAssemblyReference.cache
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\Window1.baml
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\Window1.g.vb
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\Application.g.vb
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre_MarkupCompile.cache
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.g.resources
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.Resources.resources
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.vbproj.GenerateResource.Cache
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.exe.config
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.exe
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.pdb
+C:\Users\stefano.mora\Documents\Visual Studio 2015\Projects\WpfCalibre\WpfCalibre\bin\Debug\WpfCalibre.xml

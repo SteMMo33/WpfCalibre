@@ -1,0 +1,14 @@
+﻿<Window x:Class="Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="WpfCalibre" Height="360" Width="461">
+    <Grid>
+        <Button Height="23" Margin="12,116,12,0" Name="btnQuery" VerticalAlignment="Top" IsDefault="True">Query</Button>
+        <ListBox Margin="12,145,12,12" Name="ListBox1" />
+        <Button Height="27" Margin="12,12,12,0" Name="btnFile" VerticalAlignment="Top">File: ...</Button>
+        <Label Height="25" HorizontalAlignment="Left" Margin="12,45,0,0" Name="Label1" VerticalAlignment="Top" Width="66">Nel titolo:</Label>
+        <TextBox Height="23" Margin="84,47,118,0" Name="tbTitle" VerticalAlignment="Top" />
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="12,86,0,0" Name="CheckBoxAuthors" VerticalAlignment="Top" Width="120">Aggiungi autore(i)</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Right" Margin="0,86,74,0" Name="CheckBoxFormats" VerticalAlignment="Top" Width="120">Aggiungi formati</CheckBox>
+    </Grid>
+</Window>

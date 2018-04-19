@@ -1,0 +1,11 @@
+{
+  "User": {
+    "id": 23,
+    "username": "stefano.mora",
+    "name": "stefano.mora",
+    "email": "stefano.mora@newdep.lan",
+    "new_portrait": null,
+    "host": "https://git.newdep.com",
+    "two_factor_enabled": false
+  }
+}
