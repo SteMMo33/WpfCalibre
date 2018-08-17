@@ -50,12 +50,12 @@ Class Window1
         ' Execute the query
         If books IsNot Nothing Then
             For Each book In books
-                text = book.Element("title").Value
+                count += 1
+                text = count.ToString + " - " + book.Element("title").Value
                 If (addAuthor) Then text += " - " + book.Element("authors").Value
                 If (addFormats) Then text += " - " + book.Element("_formats").Value
                 If (addTags) Then text += " - " + book.Element("tags").Value
                 ListBox1.Items.Add(text)
-                count += 1
             Next
         Else
             ListBox1.Items.Add("Problema creazione oggetto books")
@@ -92,9 +92,28 @@ Class Window1
         If Not String.IsNullOrEmpty(My.Settings.Datafile) Then btnFile.Content = My.Settings.Datafile
         CheckBoxAuthors.IsChecked = My.Settings.ShowAuthors
         CheckBoxFormats.IsChecked = My.Settings.ShowFormats
+        CheckBoxTags.IsChecked = My.Settings.ShowTags
+
+        Dim memSize As System.Drawing.Size = My.Settings.WindowSize
+        If (memSize.Width <> 0) Then
+            Me.Width = memSize.Width
+            Me.Height = memSize.Height
+        End If
+
+        Title = Title + " - v." + System.Windows.Application.ResourceAssembly.ImageRuntimeVersion
+
     End Sub
 
+
+
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
+        '
+        My.Settings.ShowAuthors = CheckBoxAuthors.IsChecked
+        My.Settings.ShowFormats = CheckBoxFormats.IsChecked
+        My.Settings.ShowTags = CheckBoxTags.IsChecked
+        '
+        My.Settings.WindowSize = New System.Drawing.Size(Me.Width, Me.Height)
+
         My.Settings.Save()
     End Sub
 End Class
