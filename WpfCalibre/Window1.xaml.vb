@@ -15,18 +15,25 @@ Class Window1
         Dim searchTitle As String = tbTitle.Text
         Dim searchAuthor As String = tbAuthor.Text
 
-        If String.IsNullOrEmpty(search) And String.IsNullOrEmpty(searchAuthor) Then
+        If String.IsNullOrEmpty(searchTitle) And String.IsNullOrEmpty(searchAuthor) Then
             MsgBox("Nessun testo di ricerca definito", MsgBoxStyle.Critical)
             Return
         End If
 
-        Dim books
+        Dim books = Nothing
 
         Try
-            ' Create the query
-            books = From c In XElement.Load(btnFile.Content.ToString).Elements("record") _
-                        Where c.Element("title").ToString.ToUpper.Contains(search.ToUpper) 'Select c.Title, c.authors
+            If String.IsNullOrEmpty(searchAuthor) Then
+                ' Create the query per titolo
+                books = From c In XElement.Load(btnFile.Content.ToString).Elements("record")
+                        Where c.Element("title").ToString.ToUpper.Contains(searchTitle.ToUpper) 'Select c.Title, c.authors
+            ElseIf String.IsNullOrEmpty(searchTitle) Then
+                ' Create the query per titolo
+                books = From c In XElement.Load(btnFile.Content.ToString).Elements("record")
+                        Where c.Element("authors").ToString.ToUpper.Contains(searchAuthor.ToUpper) 'Select c.Title, c.authors
+            Else
 
+            End If
         Catch ex As Exception
             MsgBox("Errore grave: " & ex.Message, MsgBoxStyle.Critical)
             Return
@@ -37,16 +44,22 @@ Class Window1
         Dim text As String
         Dim addAuthor As Boolean = CheckBoxAuthors.IsChecked
         Dim addFormats As Boolean = CheckBoxFormats.IsChecked
+        Dim addTags As Boolean = CheckBoxTags.IsChecked
         Dim count As Integer = 0
 
         ' Execute the query
-        For Each book In books
-            text = book.Element("title").Value
-            If (addAuthor) Then text += " - " + book.Element("authors").Value
-            If (addFormats) Then text += " - " + book.Element("_formats").Value
-            ListBox1.Items.Add(text)
-            count += 1
-        Next
+        If books IsNot Nothing Then
+            For Each book In books
+                text = book.Element("title").Value
+                If (addAuthor) Then text += " - " + book.Element("authors").Value
+                If (addFormats) Then text += " - " + book.Element("_formats").Value
+                If (addTags) Then text += " - " + book.Element("tags").Value
+                ListBox1.Items.Add(text)
+                count += 1
+            Next
+        Else
+            ListBox1.Items.Add("Problema creazione oggetto books")
+        End If
 
         'Pause the application 
         ListBox1.Items.Add(String.Format("-> {0} risultati", count))

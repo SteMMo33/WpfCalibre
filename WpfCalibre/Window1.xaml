@@ -11,9 +11,10 @@
         <Button Height="27" Margin="12,12,12,0" Name="btnFile" VerticalAlignment="Top">File: ...</Button>
         <Label Height="25" HorizontalAlignment="Left" Margin="12,45,0,0" x:Name="Label1" VerticalAlignment="Top" Width="66" Content="Titolo:"/>
         <TextBox Height="23" Margin="84,47,0,0" Name="tbTitle" VerticalAlignment="Top" HorizontalAlignment="Left" Width="432" />
-        <CheckBox Height="16" HorizontalAlignment="Left" Margin="16,111,0,0" Name="CheckBoxAuthors" VerticalAlignment="Top" Width="120">Aggiungi autore(i)</CheckBox>
-        <CheckBox Height="16" HorizontalAlignment="Right" Margin="0,111,70,0" Name="CheckBoxFormats" VerticalAlignment="Top" Width="120">Aggiungi formati</CheckBox>
+        <CheckBox Height="16" HorizontalAlignment="Left" Margin="16,111,0,0" x:Name="CheckBoxAuthors" VerticalAlignment="Top" Width="120" Content="Mostra autore(i)"/>
+        <CheckBox Height="16" HorizontalAlignment="Right" Margin="0,111,245,0" x:Name="CheckBoxFormats" VerticalAlignment="Top" Width="120" Content="Mostra formati"/>
         <Label Height="25" HorizontalAlignment="Left" Margin="12,75,0,0" x:Name="Label1_Copy" VerticalAlignment="Top" Width="66" Content="Autore:" RenderTransformOrigin="0.485,1.88"/>
         <TextBox Height="23" Margin="84,75,0,0" x:Name="tbAuthor" VerticalAlignment="Top" HorizontalAlignment="Left" Width="432" />
+        <CheckBox Height="16" HorizontalAlignment="Right" Margin="0,111,95,0" x:Name="CheckBoxTags" VerticalAlignment="Top" Width="120" Content="Mostra tag"/>
     </Grid>
 </Window>
