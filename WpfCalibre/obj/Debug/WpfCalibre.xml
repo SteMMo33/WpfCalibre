@@ -95,6 +95,13 @@ Window1
  <param name="sender"></param>
  <param name="e"></param>
 </member>
+<member name="M:WpfCalibre.Window1.Window_Closing(System.Object,System.ComponentModel.CancelEventArgs)">
+ <summary>
+ Sulla chiusura avviene il salvataggio delle impostazioni a video e ampiezza finestra
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="M:WpfCalibre.Window1.InitializeComponent">
 <summary>
 InitializeComponent

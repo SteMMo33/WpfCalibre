@@ -14,8 +14,10 @@ Class Window1
 
         Dim searchTitle As String = tbTitle.Text
         Dim searchAuthor As String = tbAuthor.Text
+        Dim searchTag As String = tbTag.Text
 
-        If String.IsNullOrEmpty(searchTitle) And String.IsNullOrEmpty(searchAuthor) Then
+        'Controllo che non siano tutte vuote
+        If String.IsNullOrEmpty(searchTitle) And String.IsNullOrEmpty(searchAuthor) And String.IsNullOrEmpty(searchTag) Then
             MsgBox("Nessun testo di ricerca definito", MsgBoxStyle.Critical)
             Return
         End If
@@ -31,6 +33,10 @@ Class Window1
                 ' Create the query per titolo
                 books = From c In XElement.Load(btnFile.Content.ToString).Elements("record")
                         Where c.Element("authors").ToString.ToUpper.Contains(searchAuthor.ToUpper) 'Select c.Title, c.authors
+            ElseIf String.IsNullOrEmpty(searchTag) Then
+                ' Create the query per tag
+                books = From c In XElement.Load(btnFile.Content.ToString).Elements("record")
+                        Where c.Element("tags").ToString.ToUpper.Contains(searchTag.ToUpper) 'Select c.Title, c.authors
             Else
 
             End If
@@ -52,7 +58,12 @@ Class Window1
             For Each book In books
                 count += 1
                 text = count.ToString + " - " + book.Element("title").Value
-                If (addAuthor) Then text += " - " + book.Element("authors").Value
+                If (addAuthor) Then
+                    Dim elAutore As XElement = book.Element("authors")
+                    For Each author In elAutore.Descendants
+                        text += " - " + author.Value
+                    Next
+                End If
                 If (addFormats) Then text += " - " + book.Element("_formats").Value
                 If (addTags) Then text += " - " + book.Element("tags").Value
                 ListBox1.Items.Add(text)
@@ -100,12 +111,16 @@ Class Window1
             Me.Height = memSize.Height
         End If
 
-        Title = Title + " - v." + System.Windows.Application.ResourceAssembly.ImageRuntimeVersion
+        Title = Title + " - CLR: " + System.Windows.Application.ResourceAssembly.ImageRuntimeVersion
 
     End Sub
 
 
-
+    ''' <summary>
+    ''' Sulla chiusura avviene il salvataggio delle impostazioni a video e ampiezza finestra
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
         '
         My.Settings.ShowAuthors = CheckBoxAuthors.IsChecked
@@ -116,4 +131,13 @@ Class Window1
 
         My.Settings.Save()
     End Sub
+
+    Private Sub btnEraseTitle_Click(sender As Object, e As RoutedEventArgs) Handles btnEraseTitle.Click
+        tbTitle.Text = ""
+    End Sub
+
+    Private Sub btnEraseAuthor_Click(sender As Object, e As RoutedEventArgs) Handles btnEraseAuthor.Click
+        tbAuthor.Text = ""
+    End Sub
+
 End Class
