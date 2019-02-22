@@ -1,0 +1,19 @@
+﻿<Window x:Class="dettaglioLibro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCalibre"
+        mc:Ignorable="d"
+        Title="Dettaglio Libro" Height="300" Width="420.882" ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label x:Name="label" Content="Titolo:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxTitolo" Height="23" Margin="58,13,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <Button x:Name="btnClose" Content="Chiudi" Margin="10,0,10,10" Height="27" VerticalAlignment="Bottom"/>
+        <Label x:Name="label1" Content="Autori:" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.754,1.982" Margin="10,36,0,0"/>
+        <ListBox x:Name="lbAuthors" Height="66" Margin="58,41,10,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Tags:" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.124,0.066"/>
+        <ListBox x:Name="lbTags" Height="58" Margin="58,112,10,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

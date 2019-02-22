@@ -69,6 +69,16 @@ InitializeComponent
 Application Entry Point.
 </summary>
 </member>
+<member name="T:WpfCalibre.dettaglioLibro">
+<summary>
+dettaglioLibro
+</summary>
+</member>
+<member name="M:WpfCalibre.dettaglioLibro.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:WpfCalibre.Window1">
 <summary>
 Window1

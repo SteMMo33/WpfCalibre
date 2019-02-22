@@ -5,6 +5,10 @@ Imports System.Xml.Linq
 
 Class Window1
 
+
+    Dim libri As List(Of Libro)
+
+
     ''' <summary>
     ''' Ricerca per titolo
     ''' </summary>
@@ -45,31 +49,68 @@ Class Window1
             Return
         End Try
 
+        'Cancella la lista risultati
         ListBox1.Items.Clear()
 
         Dim text As String
+        Dim count As Integer = 0
+        Dim item As Object
+        Dim element As XElement
+
+        'Legge le impostazioni
         Dim addAuthor As Boolean = CheckBoxAuthors.IsChecked
         Dim addFormats As Boolean = CheckBoxFormats.IsChecked
         Dim addTags As Boolean = CheckBoxTags.IsChecked
-        Dim count As Integer = 0
 
         ' Execute the query
         If books IsNot Nothing Then
+
+            libri = New List(Of Libro)
+
             For Each book In books
                 count += 1
+
+                'Costruisce la lista di obggetti libro
+                Dim libro As New Libro
+                libro.titolo = book.Element("title").Value
+
+                libro.autori = New List(Of String)
+                Dim elAutore As XElement = book.Element("authors")
+                For Each author In elAutore.Descendants
+                    libro.autori.Add(author.Value)
+                Next
+
+                libro.tags = New List(Of String)
+                element = book.Element("tags")
+                For Each sTag In element.Descendants
+                    libro.tags.Add(sTag.Value)
+                Next
+
+                libri.Add(libro)
+
+                'Costruisce la riga a video
                 text = count.ToString + " - " + book.Element("title").Value
                 If (addAuthor) Then
-                    Dim elAutore As XElement = book.Element("authors")
+                    elAutore = book.Element("authors")
                     For Each author In elAutore.Descendants
                         text += " - " + author.Value
                     Next
                 End If
                 If (addFormats) Then text += " - " + book.Element("_formats").Value
-                If (addTags) Then text += " - " + book.Element("tags").Value
+                'Tags
+                If (addTags) Then
+                    item = book.Element("tags")
+                    If Not IsNothing(item) Then
+                        text += " - " + item.Value
+                    Else
+                        text += " - NoTags"
+                    End If
+                End If
+
                 ListBox1.Items.Add(text)
             Next
         Else
-            ListBox1.Items.Add("Problema creazione oggetto books")
+            ListBox1.Items.Add("Problema creazione oggetto 'books'")
         End If
 
         'Pause the application 
@@ -138,6 +179,15 @@ Class Window1
 
     Private Sub btnEraseAuthor_Click(sender As Object, e As RoutedEventArgs) Handles btnEraseAuthor.Click
         tbAuthor.Text = ""
+    End Sub
+
+
+    Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseButtonEventArgs) Handles ListBox1.MouseDoubleClick
+        Dim index = ListBox1.SelectedIndex
+
+        Dim dettaglioFrm As New dettaglioLibro
+        dettaglioFrm.SetLibro(libri(index))
+        dettaglioFrm.ShowDialog()
     End Sub
 
 End Class
