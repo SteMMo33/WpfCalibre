@@ -82,9 +82,11 @@ Class Window1
 
                 libro.tags = New List(Of String)
                 element = book.Element("tags")
-                For Each sTag In element.Descendants
-                    libro.tags.Add(sTag.Value)
-                Next
+                If element IsNot Nothing Then
+                    For Each sTag In element.Descendants
+                        libro.tags.Add(sTag.Value)
+                    Next
+                End If
 
                 libri.Add(libro)
 
