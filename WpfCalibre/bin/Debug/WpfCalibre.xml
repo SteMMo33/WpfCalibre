@@ -112,6 +112,13 @@ Window1
  <param name="sender"></param>
  <param name="e"></param>
 </member>
+<member name="M:WpfCalibre.Window1.ListBox1_MouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+ <summary>
+ Doppio click su una riga della lista libri -> apre la finestra di dettaglio
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="M:WpfCalibre.Window1.InitializeComponent">
 <summary>
 InitializeComponent

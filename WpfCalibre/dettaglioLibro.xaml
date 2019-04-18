@@ -14,6 +14,8 @@
         <ListBox x:Name="lbAuthors" Height="66" Margin="58,41,10,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="Tags:" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.124,0.066"/>
         <ListBox x:Name="lbTags" Height="58" Margin="58,112,10,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Descrizione:" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textDesc" HorizontalAlignment="Left" Height="52" Margin="97,175,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="306"/>
 
     </Grid>
 </Window>

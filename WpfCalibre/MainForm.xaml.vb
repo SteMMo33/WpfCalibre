@@ -88,6 +88,12 @@ Class Window1
                     Next
                 End If
 
+                'Descrizione
+                element = book.Element("")
+                If element IsNot Nothing Then
+                    libro.desc = element.Value
+                End If
+
                 libri.Add(libro)
 
                 'Costruisce la riga a video
@@ -183,9 +189,17 @@ Class Window1
         tbAuthor.Text = ""
     End Sub
 
-
+    ''' <summary>
+    ''' Doppio click su una riga della lista libri -> apre la finestra di dettaglio
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseButtonEventArgs) Handles ListBox1.MouseDoubleClick
         Dim index = ListBox1.SelectedIndex
+
+        If index = ListBox1.Items.Count Then 'Doppio click sull'unica riga che indica 0 risultati
+            Return
+        End If
 
         Dim dettaglioFrm As New dettaglioLibro
         dettaglioFrm.SetLibro(libri(index))

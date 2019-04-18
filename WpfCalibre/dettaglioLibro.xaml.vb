@@ -33,5 +33,7 @@ Public Class dettaglioLibro
             Next
         End If
 
+        textDesc.Text = _libro.desc
+
     End Sub
 End Class
