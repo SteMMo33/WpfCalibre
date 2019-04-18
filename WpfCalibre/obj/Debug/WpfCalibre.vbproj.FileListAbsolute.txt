@@ -30,3 +30,4 @@ C:\Users\stefano.mora\Source\Repos\SteMMo33\WpfCalibre\WpfCalibre\obj\Debug\WpfC
 C:\Users\stefano.mora\Source\Repos\SteMMo33\WpfCalibre\WpfCalibre\obj\Debug\dettaglioLibro.g.vb
 C:\Users\stefano.mora\Source\Repos\SteMMo33\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre_MarkupCompile.lref
 C:\Users\stefano.mora\Source\Repos\SteMMo33\WpfCalibre\WpfCalibre\obj\Debug\dettaglioLibro.baml
+C:\Users\stefano.mora\Source\Repos\SteMMo33\WpfCalibre\WpfCalibre\obj\Debug\WpfCalibre.vbprojResolveAssemblyReference.cache
