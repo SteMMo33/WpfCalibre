@@ -5,7 +5,7 @@ Imports System.Xml.Linq
 
 Class Window1
 
-
+    'Lista dei libri a video
     Dim libri As List(Of Libro)
 
 
@@ -88,8 +88,14 @@ Class Window1
                     Next
                 End If
 
+                'Publisher
+                element = book.Element("publisher")
+                If element IsNot Nothing Then
+                    libro.publisher = element.Value
+                End If
+
                 'Descrizione
-                element = book.Element("")
+                element = book.Element("comments")
                 If element IsNot Nothing Then
                     libro.desc = element.Value
                 End If
@@ -197,10 +203,11 @@ Class Window1
     Private Sub ListBox1_MouseDoubleClick(sender As Object, e As MouseButtonEventArgs) Handles ListBox1.MouseDoubleClick
         Dim index = ListBox1.SelectedIndex
 
-        If index = ListBox1.Items.Count Then 'Doppio click sull'unica riga che indica 0 risultati
+        If index = ListBox1.Items.Count - 1 Then 'Doppio click sull'ultima riga che indica il numero dei risultati?
             Return
         End If
 
+        'Finestra di dettaglio
         Dim dettaglioFrm As New dettaglioLibro
         dettaglioFrm.SetLibro(libri(index))
         dettaglioFrm.ShowDialog()
