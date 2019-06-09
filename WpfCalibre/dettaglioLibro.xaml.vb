@@ -34,7 +34,10 @@ Public Class dettaglioLibro
         End If
 
         textPublisher.Text = _libro.publisher
-        textDesc.NavigateToString(_libro.desc)
+
+        If Not IsNothing(_libro.desc) Then
+            textDesc.NavigateToString(_libro.desc)
+        End If
 
     End Sub
 End Class
