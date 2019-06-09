@@ -17,11 +17,17 @@ Public Class dettaglioLibro
         Me.Close()
     End Sub
 
+
+    ''' <summary>
+    ''' Riempie la form con i datiricevuti
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
     Private Sub dettaglioLibro_Loaded(sender As Object, e As RoutedEventArgs) Handles Me.Loaded
         'Sicurezza
         If IsNothing(_libro) Then Return
 
-        textBoxTitolo.Text = _libro.titolo
+        If Not IsNothing(_libro.titolo) Then textBoxTitolo.Text = _libro.titolo
 
         For Each autore In _libro.autori
             lbAuthors.Items.Add(autore)
@@ -33,11 +39,9 @@ Public Class dettaglioLibro
             Next
         End If
 
-        textPublisher.Text = _libro.publisher
-
-        If Not IsNothing(_libro.desc) Then
-            textDesc.NavigateToString(_libro.desc)
-        End If
+        If Not IsNothing(_libro.publisher) Then textPublisher.Text = _libro.publisher
+        If Not IsNothing(_libro.desc) Then textDesc.NavigateToString(_libro.desc)
 
     End Sub
+
 End Class
